@@ -45,6 +45,13 @@ jobs:
       - name: Show files (debug)
         run: find artifacts -type f
 
+      - name: Rename assets
+        run: |
+          find artifacts -name "*.duckdb_extension" | while read f; do
+            arch=$(basename "$(dirname "$f")")
+            mv "$f" "$(dirname "$f")/mortgage_table-${arch}.duckdb_extension"
+          done
+
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
