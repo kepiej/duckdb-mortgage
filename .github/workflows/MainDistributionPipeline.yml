@@ -49,7 +49,7 @@ jobs:
         run: |
           find artifacts -name "*.duckdb_extension" | while read f; do
             arch=$(basename "$(dirname "$f")")
-            mv "$f" "$(dirname "$f")/mortgage_table-${arch}.duckdb_extension"
+            mv "$f" "$(dirname "$f")/${arch}.duckdb_extension"
           done
 
       - name: Show files (debug)
