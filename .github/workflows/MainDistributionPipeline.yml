@@ -52,6 +52,9 @@ jobs:
             mv "$f" "$(dirname "$f")/mortgage_table-${arch}.duckdb_extension"
           done
 
+      - name: Show files (debug)
+        run: find artifacts -type f
+
       - name: Publish release
         uses: softprops/action-gh-release@v2
         with:
