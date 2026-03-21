@@ -1,21 +1,9 @@
 # name: test/sql/mortgage_table.test
-# description: test mortgage_table extension
+# description: test mortgage_table table function
 # group: [quack]
-
-# Before we load the extension, this will fail
-statement error
-SELECT * FROM mortgage_table(100000.0, 240, 1.8, "FixedMensualities");
-----
-Catalog Error: Table Function with name mortgage_table does not exist!
 
 # Require statement will ensure the extension is loaded from now on
 require mortgage_table
-
-# Test PMT scalar function
-query I
-SELECT PMT(0.018/12, 240, 100000.0);
-----
--496.4660485877993
 
 # Test mortgage_table table function
 query IIII

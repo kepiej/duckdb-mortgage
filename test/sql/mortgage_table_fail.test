@@ -1,0 +1,9 @@
+# name: test/sql/mortgage_table_fail.test
+# description: test mortgage_table table function
+# group: [quack]
+
+# Before we load the extension, this will fail
+statement error
+SELECT * FROM mortgage_table(10000.0, 24, 1.85, "FixedMensualities");
+----
+Catalog Error: Table Function with name mortgage_table does not exist!

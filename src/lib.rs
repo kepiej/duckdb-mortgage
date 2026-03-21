@@ -158,9 +158,9 @@ impl VScalar for PMTVScalar {
     fn signatures() -> Vec<ScalarFunctionSignature> {
         vec![ScalarFunctionSignature::exact(
             vec![
-                LogicalTypeId::Double.into(),  // Interest rate
-                LogicalTypeId::Integer.into(), // Number of periods
-                LogicalTypeId::Double.into(),  // Principal
+                LogicalTypeId::Double.into(), // Interest rate
+                LogicalTypeId::Bigint.into(), // Number of periods
+                LogicalTypeId::Double.into(), // Principal
             ],
             LogicalTypeId::Double.into(),
         )]

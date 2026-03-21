@@ -1,0 +1,12 @@
+# name: test/sql/pmt.test
+# description: test PMT function in mortgage_table extension
+# group: [quack]
+
+# Require statement will ensure the extension is loaded from now on
+require mortgage_table
+
+# Test PMT scalar function
+query I
+SELECT PMT(0.018/12, 240, 100000.0);
+----
+-496.4660485877993
